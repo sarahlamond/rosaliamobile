@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+h1, h2 {
+  font-family: "Reggae One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+p, h3{
+  font-family: "Reenie Beanie", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html, body{
+  width: 100%;
+  overscroll-behavior: none;
+  min-height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Reenie Beanie", "Reggae One";
+}
+
+body {
+    background-color: white;
+}
+
+.organizer {
+  background-image: url('tour/cover2.webp'); 
+  background-repeat: no-repeat;
+  background-position: center; 
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+}
+
+.headerVideoContainer {
+  position: absolute;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.headerVideoContainer > video {
+  transform: scale(1.5);
+}
+
+.organizer h1 {
+  font-size: 120px; 
+  color: #CD0000;
+  margin: 0;
+  z-index: 5; 
+}
+
+.organizer video {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#onlyh1{
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+#onlyh1::before,
+#onlyh1::after {
+ content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+#onlyh1::before {
+  background-color: white;
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+#onlyh1::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  color: white;
+}
+
+#onlyh1:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+#onlyh1:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+#onlyh1 span {
+  display: inline-block;
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+#onlyh1:hover span {
+  transform: translate3d(-200%, 0, 0);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; 
+  z-index: 6;
+}
+
+.header h2 {
+  font-size: 80px;
+  margin-inline: 80px;
+  color: #CD0000;
+  background: linear-gradient(to bottom, white 0%, white 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  text-decoration: none;
+}
+
+
+.organizer h2:hover {
+  transform: scale(1.5);
+  color: #003DD9;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-15px);}}%3C/style%3E%3Cpath fill='none' stroke='%230087ca' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-size: auto 4px;
+
+}
+
+.cover{
+  object-fit: cover;
+
+}
+
+.wrapper {
+    z-index: 4;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.container {
+    height: 400px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.card {
+    width: 80px;
+    border-radius: .75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 40px -5px rgba(255,29,20,0.9);
+}
+
+.card > .row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card > .row > .icon {
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.card > .row > .description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+}
+
+.description p {
+    color: #b0b0ba;
+    padding-top: 5px;
+    font-size: 150%;
+}
+
+.description h4 {
+    text-transform: uppercase;
+    font-size: 350%;
+
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    width: 600px;
+}
+
+input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.card[for="c1"] {
+    background-image: url('tour/rosa.webp');
+}
+.card[for="c2"] {
+    background-image: url('tour/10.jpeg');
+}
+.card[for="c3"] {
+    background-image: url('tour/1.webp');
+}
+.card[for="c4"] {
+    background-image: url('tour/4.jpeg');
+}
+.card[for="c5"] {
+    background-image: url('tour/10.webp');
+}
+.card[for="c6"] {
+    background-image: url('tour/8.webp');
+}
+
+
+.videogallery{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15%;
+}
+
+.twoColumn {
+    position: relative;
+    display: flex;
+    align-content: center;
+    flex-flow: row;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.bottom{
+  background-image: url('tour/image 10.png'); 
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: cover;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  width: 100vw;
+  height: 48vh;
+  position: relative;
+  z-index: -1;
+}
+
+.centertxt{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  right: 42%;
+  top: 255%;
+  text-align: center;
+  font-size: 430%;
+  color: #003DD9;
+  z-index: 4;
+}
+
+
+.centertxt a{
+  text-decoration: none;
+  box-shadow: inset 0 0 0 0 #003DD9;
+  color: #003DD9;
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.centertxt a:hover {
+  box-shadow: inset 300px 0 0 0 #54b3d6;
+  color: white;
+}
+
+
+#rosalia-bottom{
+  position: absolute;
+  left: 2%;
+  top: 2%;
+  font-size: 350%;
+  color: #CD0000;
+}
+
+#tinypic5{
+  position: absolute;
+  left: 25%;
+  height: auto;
+  width: 45%;
+  z-index: 3;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+}
+
+#tinypic7{
+  position: absolute;
+  right: 0px; 
+  bottom: 0%;
+  height: auto;
+  width: 40%;
+  z-index: 3;
+  margin-right: 0%;
+  margin-bottom: 0%;
+}
+
+#tinypic8{
+  position: absolute;
+  left: 0%;
+  top: 150%;
+  z-index: 3;
+  height: auto;
+  width: 30%;
+}
+
+#tinypic9{
+  position: absolute;
+  right: 10%;
+  top: 178%;
+  z-index: -2;
+  height: auto;
+  width: 37%;
+}
+
+#tinypic10{
+  position: absolute;
+  left: 10%;
+  top: 178%;
+  z-index: -4;
+  height: auto;
+  width: 37%;
+  transform: scaleX(-1);
+}
+
+#tinypic11{
+  position: absolute;
+  right: 0%;
+  top: 100%;
+  z-index: -1;
+  height: auto;
+  width: 25%;
+}
+
+#rosalia-title{
+  position: absolute;
+  left: 5%;
+  top: 110%;
+  font-size: 670%;
+  color: #003DD9;
+  text-align: left;
+}
+
+@media only screen and (max-width: 768px) {
+  .organizer h1 {
+    font-size: 500%;
+  }
+
+  .header h2 {
+    font-size: 300%;
+    margin-inline: 40px; 
+  }
+
+  .container {
+    height: 35%;
+    margin-left: 0%;
+    padding-left: 0%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    width: 5%;
+    border-radius: .75rem;
+  }
+
+  input:checked + label {
+    width: 200px;
+  }
+
+  #rosalia-title{
+    position: absolute;
+    left: 5%;
+    top: 110%;
+    font-size: 550%;
+    color: #003DD9;
+    text-align: left;
+  }
+
+  .centertxt{
+    right: 39%;
+    top: 288%;
+    text-align: center;
+    font-size: 200%;
+  }
+
+  #rosalia-bottom{
+    left: 3%;
+    top: 2%;
+    font-size: 160%;
+  }
+
+  .videogallery{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .twoColumn {
+    position: relative;
+    right: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    padding-right: 0%;
+    width: 100%;
+    height: 100%;
+    bottom: 100px;
+  }
+
+  #tinypic9{
+    opacity: 0%;
+  }
+
+  #tinypic10{
+    opacity: 0%;
+  }
+
+  .bottom{
+    width: 100vw;
+    height: 25vh;
+  }
+
+}
+

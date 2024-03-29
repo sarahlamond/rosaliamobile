@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  font-family: "Reggae One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+p, h3{
+  font-family: "Reenie Beanie", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100vw;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.organizer {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  height: 100%;
+  position: relative;
+
+}
+
+
+.headerVideoContainer {
+  position: absolute;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.headerVideoContainer > video {
+  transform: scale(1.5);
+}
+
+.organizer h1 {
+  font-size: 120px; 
+  color: #CD0000;
+  margin: 0;
+  z-index: 5; 
+}
+
+#onlyh1{
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+#onlyh1::before,
+#onlyh1::after {
+ content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+#onlyh1::before {
+  background-color: black;
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+#onlyh1::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  color: black;
+}
+
+#onlyh1:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+#onlyh1:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+#onlyh1 span {
+  display: inline-block;
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+#onlyh1:hover span {
+  transform: translate3d(-200%, 0, 0);
+}
+
+
+.organizer video {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; 
+  z-index: 6;
+}
+
+.header h2 {
+  font-size: 80px;
+  margin-inline: 80px;
+  color: #CD0000;
+  background: linear-gradient(to bottom, white 0%, white 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  text-decoration: none;
+}
+
+
+.organizer h2:hover {
+  transform: scale(1.5);
+  color: black;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-15px);}}%3C/style%3E%3Cpath fill='none' stroke='%230087ca' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-size: auto 4px;
+
+}
+
+.videogallery{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#newRelease{
+  font-size: 500%;
+  margin-left: 5%;
+  margin-top: 5%;
+  color: #003DD9;
+}
+
+.twoColumn {
+  margin-top: 3%;
+  margin-bottom: 5%;
+  position: relative;
+  display: flex;
+  align-content: center;
+  flex-flow: row;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  z-index: 1;
+  width: 100%;
+}
+
+.Onecolumn {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    z-index: 1;
+    width: 100%;
+} 
+
+.Onecolumn h3{
+  font-size: 800%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+.Onecolumn p{
+  font-size: 300%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+.moreInfo{
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-right: 20%;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  z-index: 1;
+  width: 100%;
+  font-size: 300%;
+  margin-bottom: 10%;
+}
+
+#button {
+  font-family: "Reenie Beanie";
+  font-size: 400%; 
+  color: black;
+  text-decoration: none;
+
+  display: inline-block;
+  text-align: center;
+  padding: 20px 80px;
+  background-color: transparent;
+  
+  border-radius: 10px;
+  border: 3px solid black;
+  margin-top: 40px;
+  margin-bottom: 5px;
+}
+
+#button:hover {
+  background-color: #003DD9;
+  color: white;
+  border-radius: 10px;
+  border: 3px solid white;
+}
+
+#button2 {
+  font-family: "Reenie Beanie";
+  font-size: 400%; 
+  color: black;
+  text-decoration: none;
+
+  display: inline-block;
+  text-align: center;
+  padding: 20px 80px;
+  background-color: transparent;
+  
+  border-radius: 10px;
+  border: 3px solid black;
+  margin-top: 40px;
+  margin-bottom: 5px;
+}
+
+#button2:hover {
+  background-color: #CD0000;
+  color: white;
+  border-radius: 10px;
+  border: 3px solid white;
+}
+
+.bottom{
+  box-sizing: border-box;
+  background-image: url('tour/image 10.png'); 
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: cover;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  width: 100vw;
+  height: 48vh;
+  position: relative;
+  z-index: -4;
+}
+
+.centertxt{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  right: 42%;
+  bottom: 19%;
+  text-align: center;
+  font-size: 430%;
+  color: #003DD9;
+  z-index: 4;
+}
+
+
+.centertxt a{
+  text-decoration: none;
+  box-shadow: inset 0 0 0 0 #003DD9;
+  color: #003DD9;
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.centertxt a:hover {
+  box-shadow: inset 300px 0 0 0 #54b3d6;
+  color: white;
+}
+
+#rosalia-bottom{
+  position: absolute;
+  left: 2%;
+  top: 2%;
+  font-size: 350%;
+  color: #CD0000;
+}
+
+
+#tinypic5{
+  position: absolute;
+  left: 25%;
+  height: auto;
+  width: 45%;
+  z-index: 3;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .organizer h1 {
+    font-size: 500%;
+  }
+
+  .header h2 {
+    font-size: 300%;
+    margin-inline: 40px; 
+  }
+
+  #newRelease{
+    font-size: 300%;
+  }
+
+  .Onecolumn h3{
+    font-size: 400%;
+    text-align: center;
+  }
+
+  .Onecolumn p{
+    font-size: 200%;
+    text-align: center;
+  }
+
+  .moreInfo{
+    font-size: 100%;
+    text-align: center;
+  }
+
+  #button {
+    font-family: "Reenie Beanie";
+    font-size: 200%; 
+    padding: 10px 35px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  #button2 {
+    font-family: "Reenie Beanie";
+    font-size: 200%; 
+    padding: 10px 35px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .bottom{
+    width: auto;
+    height: 20%;
+    position: relative;
+    z-index: -4;
+  }
+
+  .centertxt{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    right: 42%;
+    bottom: 19%;
+    text-align: center;
+    font-size: 200%;
+    color: #003DD9;
+    z-index: 4;
+  }
+
+  #rosalia-bottom{
+    left: 3%;
+    top: 2%;
+    font-size: 160%;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

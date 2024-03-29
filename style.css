@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  font-family: "Reggae One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+p, h3, h4{
+  font-family: "Reenie Beanie", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100vw;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.organizer {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  height: 100%;
+  position: relative;
+
+}
+
+
+.headerVideoContainer {
+  position: absolute;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.headerVideoContainer > video {
+  transform: scale(1.5);
+}
+
+.organizer h1 {
+  font-size: 120px; 
+  color: #CD0000;
+  margin: 0;
+  z-index: 5; 
+}
+
+#onlyh1{
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+#onlyh1::before,
+#onlyh1::after {
+ content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+#onlyh1::before {
+  background-color: white;
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+#onlyh1::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  color: white;
+}
+
+#onlyh1:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+#onlyh1:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+#onlyh1 span {
+  display: inline-block;
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+#onlyh1:hover span {
+  transform: translate3d(-200%, 0, 0);
+}
+
+
+.organizer video {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; 
+  z-index: 6;
+}
+
+#abouttext{
+  position: absolute;
+  top: 90%;
+  right: 45%;
+  z-index: 3;
+  font-size: 100px;
+  color: #CD0000;
+}
+
+.header h2 {
+  font-size: 80px;
+  margin-inline: 80px;
+  color: #CD0000;
+  background: linear-gradient(to bottom, white 0%, white 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  text-decoration: none;
+}
+
+
+.organizer h2:hover {
+  transform: scale(1.5);
+  color: white;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-15px);}}%3C/style%3E%3Cpath fill='none' stroke='%230087ca' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-size: auto 4px;
+
+}
+
+.aboutsec {
+    margin-top: 40;
+    top: 0;
+    background-image: url('paper.png'); 
+    background-size: 80%; 
+    background-repeat: no-repeat;
+    background-position: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 5% 15%; 
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.twoColumn {
+    position: relative;
+    display: flex;
+    align-content: center;
+    flex-flow: row;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding: 0% 10%;
+    gap: 5%;
+    z-index: 1;
+    width: 100%;
+}
+
+.twoColumn p{
+    font-size: 225%;
+    text-align: center;
+}
+
+.flamenco {
+    background-image: url('flam.png');
+    margin-left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 220vmax;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.aboutitle{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 360%;
+  position: absolute; 
+  top: 97%; 
+  max-width: 60%; 
+  text-align: left; 
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 60%;
+  color: #CD0000;
+}
+
+.paragraph {
+    font-size: 270%;
+    position: absolute; 
+    top: 9%; 
+    max-width: 60%; 
+    text-align: center; 
+}
+
+.images{
+  width: 105%; 
+  height: 105%; 
+  margin-right: 0; 
+  padding: 0 7%;
+}
+
+
+#rosalia-title{
+  position: absolute;
+  right: 10%;
+  bottom: 38%;
+  font-size: 900%;
+  color: #003DD9;
+  text-align: right;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+#rosaliaimage2{
+  position: absolute;
+  right: 10%;
+  bottom: 20%;
+}
+
+#rosaliaimage2:hover{
+  opacity: 0%;
+  z-index: -1;
+}
+
+
+.centertxt{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  right: 42%;
+  bottom: 3%;
+  text-align: center;
+  font-size: 430%;
+  color: #003DD9;
+}
+
+
+.centertxt a{
+  text-decoration: none;
+  box-shadow: inset 0 0 0 0 #003DD9;
+  color: #003DD9;
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.centertxt a:hover {
+  box-shadow: inset 300px 0 0 0 #54b3d6;
+  color: white;
+}
+
+#rosalia-bottom{
+  position: absolute;
+  left: 2%;
+  bottom: 9.5%;
+  font-size: 350%;
+  color: #CD0000;
+}
+
+#tinypic{
+  position: absolute;
+  right: 2%;
+  top: 100%;
+  height: 30%;
+  width: auto;
+  z-index: 5;
+}
+
+#tinypic1{
+  position: absolute;
+  left: 4%;
+  top: 175%;
+  height: 30%;
+  width: auto;
+  z-index: 4;
+}
+
+#tinypic3{
+  position: absolute;
+  left: 2%;
+  top: 100%;
+  height: 30%;
+  width: auto;
+  z-index: -1;
+}
+
+#tinypic4{
+  position: absolute;
+  right: 2%;
+  top: 190%;
+  height: 50%;
+  width: auto;
+  transform: scaleX(-1);
+  z-index: -1;
+}
+
+#tinypic5{
+  position: absolute;
+  left: 25%;
+  bottom: 1%;
+  height: auto;
+  width: 45%;
+  z-index: -1;
+}
+
+#tinypic6{
+  position: absolute;
+/*  left: 53%;*/
+  right: 0px; /* PROF NOTE: The transparency on the side of the image was creating extra space on the side of the page.
+                            If we position it using the *right* edge, this won't happen */
+  bottom: 58%;
+  height: auto;
+  width: 40%;
+  z-index: -1;
+  rotate: -30deg; /* PROF NOTE: Even though we fixed the "right" positioning, rotating this image is causing its corner
+                                to poke out of the edge of the page– you could fix this by doing the rotation in photoshop
+                                but I've "forced" horizontal scrolling to be disabled on the body by setting overflow-x
+                                to 'hidden' */
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+#tinypic7{
+  position: absolute;
+/*  left: 65%;*/
+  right: 0px; /* PROF NOTE: The transparency on the side of the image was creating extra space on the side of the page.
+                            If we position it using the *right* edge, this won't happen */
+  bottom: 0.1%;
+  height: auto;
+  width: 40%;
+  z-index: -1;
+  margin-right: 0%;
+  margin-bottom: 0%;
+}
+
+#tinyvid{
+  position: absolute;
+  right: 10%;
+  bottom: 20%;
+  z-index: -1;
+}
+
+#tinyvid:hover{
+  z-index: 6;
+}
+
+@media only screen and (max-width: 768px) {
+  .organizer h1 {
+    font-size: 80px;
+  }
+
+  .header h2 {
+    font-size: 30px;
+    margin-inline: 40px; 
+  }
+
+  .aboutsec {
+    padding: 10% 5%; 
+    background-size: 100%; 
+  }
+
+  .twoColumn {
+    position: fixed;
+    box-sizing: border-box;
+    height: 30%;
+    width: 90%;
+  }
+
+  .twoColumn p{
+    font-size: 95%;
+    text-align: center;
+  }
+
+  #tinypic{
+    right: 2%;
+    top: 109%;
+    height: 27%;
+    width: auto;
+    z-index: -2;
+  }
+
+  #tinypic1{
+    height: 30%;
+    width: auto;
+    top: 163%;
+  }
+
+  .flamenco {
+    width: 100%;
+    height: 140vmax;
+  }
+
+  .paragraph {
+    font-size: 100%;
+    top: 9%; 
+    max-width: 60%; 
+    text-align: center; 
+  }
+
+  .images{
+    width: 50%; 
+    height: 50%; 
+    margin-right: 0; 
+    padding: 0 7%;
+  }
+
+  #rosalia-image{
+    opacity: 0%;
+    z-index: -10;
+  }
+
+  #rosaliaimage2{
+    opacity: 0%;
+  }
+
+  #tinyvid{
+    width: 80%; 
+    height: 30%; 
+    z-index: 10;
+  }
+
+  #rosalia-title{
+    right: 10%;
+    bottom: 45%;
+    font-size: 300%;
+  }
+
+  #tinypic4{
+    height: 36%;
+    width: auto;
+  }
+
+  .centertxt{
+    text-align: center;
+    font-size: 150%;
+  }
+
+  #abouttext{
+    position: absolute;
+    top: 100%;
+    right: 30%;
+    z-index: 3;
+    font-size: 100px;
+    color: #CD0000;
+  }
+
+  #rosalia-bottom{
+    position: absolute;
+    left: 2%;
+    bottom: 7%;
+    font-size: 200%;
+    color: #CD0000;
+}
+
+}
+
+
+
+
+
+
